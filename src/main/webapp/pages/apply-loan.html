@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width ,initial-scale=1.0" />
+<title>Apply a Loan</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark bg-dark">
+		
+		<div class="container">
+		
+			<a class="navbar-brand" id="dashboard">
+				Loan Management System
+			</a>
+			
+			<div>
+			<a class="btn btn-outline-light me-2" id="dashboard">
+				Dashboard
+			</a>
+			
+			<button type="button" class="btn btn-outline-light" id="logout">
+				Logout
+			</button>
+			</div>
+		</div>
+	
+	</nav>
+
+<!--  MAIN CONTENT  -->
+
+<div class="container mt-5" style="background-color:Khaki">
+	
+	<div class="row justify-content-center" >
+	
+		<div class="col-md-7">
+		
+			<div class="card shadow">
+				
+				<div class="card-body">
+				
+					<h2 class="text-center mb-4">
+						Apply for a Loan
+					</h2>
+					
+					<!-- LOAN APPLICATION FORM -->
+				
+					<form id="loanApplicationForm">
+					
+						<!--  LOAN TYPE -->
+							
+					<div class="mb-3">
+					
+						<label for="loanType" class="form-label">
+							Loan Type
+						</label>
+						
+						<select id="loanType" class="form-select" required>
+							<option value=""> Select Loan Type </option>
+							<option value="housingLoan" > Housing Loan</option>
+							<option value="vehicleLoan" > Vehicle Loan</option>
+							<option value="personalLoan" > Personal Loan</option>
+							
+						</select>
+					</div>
+					
+				
+						<!--  REQUESTED AMOUNT -->
+						
+					<div class="mb-3">
+						
+						<label for="requestedAmount" class="form-label">
+							Requested Amount
+						</label>
+						
+						<input type="number" id="requestedAmount" class="form-control" value="" min="1" placeholder="Enter amount" required/>
+					
+					</div>
+					
+					<!-- PURPOSE -->
+					
+					<div class="mb-3">
+							<label for="purpose" class="form-label">
+								Purpose
+							</label>
+							
+							<textarea id="purpose" rows="4" class="form-control" placeholder="Enter the purpose of the loan" required>
+							
+							</textarea>
+							
+					</div>
+					
+					<!-- SUBMIT BUTTON -->
+					
+					<div class="d-grid mb-3">
+					
+						<button id="submit" class="btn btn-primary">
+							Submit Loan Application
+						</button>
+					</div>
+					
+					</form>
+					
+					<!--  MESSAGE -->
+					
+					<div id="message" class="text-center">
+					*** MESSSAGE TEST PURPOSE ***					
+					</div>
+				
+				</div>
+			
+			</div>
+		
+		</div>
+	
+	</div>
+	
+	
+
+</div>
+  <!-- JAVASCRIPT -->
+  
+  <script src="../js/apply-loan.js"></script>
+
+</body>
+</html>
