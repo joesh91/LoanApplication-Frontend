@@ -84,9 +84,6 @@ if(loanApplicationForm){
 				purpose:purpose
 			}
 			
-			console.log("LOAN APPLICATION JSON : ",loanApplication);
-			
-			
 			// SENDING VALUES TO BACKEND
 			
 			try{
@@ -101,7 +98,6 @@ if(loanApplicationForm){
 					body:JSON.stringify(loanApplication)
 				});
 				
-				console.log("Response Status : ",response.status);
 				
 				//	TOKEN EXPIRED / NOT AUTHORIZED 
 				
@@ -123,8 +119,6 @@ if(loanApplicationForm){
 				//	READ RESPONSE
 				
 				const result = await response.json();
-				
-				console.log("READ RESPONSE :"+result);
 				
 				// SUCCESS
 				
@@ -177,7 +171,7 @@ async function showUserName(){
 				}
 				
 			});
-			console.log("RESPONSE : "+response.status);
+
 			//===============
 			//	CHECK RESPONSE
 			//===============
@@ -196,8 +190,6 @@ async function showUserName(){
 			
 					
 			const user = await response.json();
-			
-			console.log("CURRENTE USER : ",user);	
 			
 			//document.getElementById("customer").classList.add("d-none");
 			document.getElementById("customer").textContent =  user.userName ;	

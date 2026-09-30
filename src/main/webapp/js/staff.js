@@ -1,8 +1,6 @@
 
 const token = sessionStorage.getItem("token");
 
-console.log("TOKEN : ",token);
-
 if (!token) {
     window.location.href = "login.html";
 }
@@ -14,7 +12,7 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/staffs",{
 		"Authorization":"Bearer "+token
 	}
 }).then(response =>{
-	console.log("RESPONSE : ",response);
+
 	if(!response.ok){
 		throw new Error("Failed to load staff details.",response.status);
 	}
@@ -25,8 +23,7 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/staffs",{
 	const staffTable = document.getElementById("staffTable");
 	
 	staffs.forEach(staff=>{
-		
-		console.log("STAFF : ",staff.staffId);
+
 		const row = document.createElement("tr");
 		
 		// STAFF POSITION SEPERATE VALUES

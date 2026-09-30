@@ -5,13 +5,9 @@ if(!token){
 	window.location=href="../pages/login.html";
 }
 
-console.log("TOKEN : "+token);
-
 const urlParam = new URLSearchParams(window.location.search);
 
 const selectedApplicationId = urlParam.get("id");
-
-console.log("APPLICATION ID : " ,selectedApplicationId);
 
 //	LOGOUT BUTTON
 
@@ -62,7 +58,6 @@ async function loadLoanApplication(){
 			
 		});
 		
-		console.log("RESPONSE STATUS : "+response.status);
 		
 		if(response.status === 401){
 			
@@ -86,8 +81,6 @@ async function loadLoanApplication(){
 		//	GET JSON VALUE TO VARIABLE AND READ JSON
 		
 		const result = await response.json();
-		
-		console.log("RESULT : "+result.applicationId);
 		
 		//	HIDE LOADING 
 		

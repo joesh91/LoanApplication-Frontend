@@ -1,7 +1,6 @@
 
 const token = sessionStorage.getItem("token");
 
-console.log("TOKEN : ",token);
 
 if (!token) {
     window.location.href = "login.html";
@@ -11,7 +10,6 @@ const urlParam = new URLSearchParams(window.location.search);
 
 const staffId = urlParam.get("id");
 
-console.log("STAFF ID : ",staffId);
 
 fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/staffs/"+staffId,{
 	
@@ -68,18 +66,13 @@ updateButton.addEventListener("click",function(event){
 		},
 		body:JSON.stringify(staffData)
 	}).then(response =>{
-		console.log("RESPONSE STATUS : ",response.status);
-		console.log("RESPONSE STATUS : ",response.statusText);
+	
 		if(!response.ok){
 			throw new Error("Failed to update staff details."+response.status);
 		}
-		console.log("RESPONSE STATUS : ",response.status);
+	
 		return response.json();
 	}).then(staff =>{
-		
-		console.log("STAFF DETAILS UPDATED SUCCESSFULLY. ",staff);
-		
-		
 		
 		window.location.href="staff.html";
 		

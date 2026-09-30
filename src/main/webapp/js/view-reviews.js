@@ -42,8 +42,6 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/applicationrevie
 	
 }).then(reviews =>{
 	
-	console.log("APPLICATION REVIEWS : ",reviews);
-	
 	if(reviews.length === 0){
 		
 		tableBody.innerHTML=`

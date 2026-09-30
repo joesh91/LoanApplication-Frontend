@@ -17,7 +17,6 @@
 	}
 	else {
 	    console.log("JWT found");
-	    console.log(token);
 	
 	    //	DISPLAY USERNAME
 	

@@ -9,8 +9,6 @@ const loginForm = document.getElementById("loginform");
 if(loginForm){
 loginForm.addEventListener("submit", function(event){
 	
-	console.log("logging button was pressed");
-	
 	event.preventDefault();
 	
 	const username = document.getElementById("username").value;
@@ -35,8 +33,7 @@ loginForm.addEventListener("submit", function(event){
 	
 	.then(response => response.text())					// "Take the server's response and read its body as plain text."
 	.then(data=>{
-		console.log(data);
-		
+	
 		// Check whether login was successful
 		
 		if(data === "OTP SENT"){
@@ -92,7 +89,6 @@ loginForm.addEventListener("submit", function(event){
 				
 			}).then(response => response.json())
 			.then(data =>{
-				console.log(data);
 				
 				// Get JWT from LoginResponseDto
 				const token = data.token;
@@ -114,8 +110,6 @@ loginForm.addEventListener("submit", function(event){
 				
 				const role = payload.role;
 				
-				console.log("ROLE : ",role);
-				
 				//=============================
 				//	REDIRECT BASED ON ROLE
 				//=============================
@@ -123,13 +117,11 @@ loginForm.addEventListener("submit", function(event){
 				if(role === "CUSTOMER"){
 					
 					//go to customer dashboard
-					console.log("CUSTOMER IF CONDITION LOADED.");
 					window.location.href="../customer/customer-dashboard.html";
 				
 				}else{
 					
 					//go to admin dashboard
-					console.log("ADMIN IF CONDITION LOADED.");
 					window.location.href="../pages/dashboard.html";
 				}
 								

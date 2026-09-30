@@ -5,13 +5,13 @@ if(!token){
 	window.location.href="login.html";
 }
 
-console.log("TOKEN : ",token);
+
 
 const urlParam = new URLSearchParams(window.location.search);
 
 const userId = urlParam.get("id");
 
-console.log("USER ID ",userId);
+
 
 const userID = document.getElementById("userId");
 const userName = document.getElementById("userName");
@@ -90,7 +90,7 @@ updateButton.addEventListener("click",function(){
 		body:JSON.stringify(userData)
 		
 	}).then(response =>{
-		console.log("RESPONSE " +response.userName);
+	
 		if(!response.ok){
 			throw new Error("Failed to submit user update .",response.status);
 		}
@@ -98,13 +98,10 @@ updateButton.addEventListener("click",function(){
 		return response.json();
 	}).then(result =>{
 		
-		console.log("SUCCESSFULLY UPDATED ",result);
-		
 		window.location.href="users.html";
 		
 	}).catch(error =>{
-		console.error("Error ",error);
-		
+
 		document.getElementById("userMessage").innerHTML = `<div class="alert alert-danger"> Failed to update. </div>`;
 	});
 	

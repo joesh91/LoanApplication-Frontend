@@ -5,7 +5,6 @@ if (!token) {
     window.location.href = "login.html";
 }
 
-console.log(token);
 const createButton = document.getElementById("createStaffBtn");
 
 createButton.addEventListener("click",function(event){
@@ -17,9 +16,6 @@ createButton.addEventListener("click",function(event){
 	const email = document.getElementById("email").value;
 	const position = document.getElementById("position").value;
 
-	
-	console.log("STAFF ID : ",staffId)
-	
 	const staffData={
 		
 		staffId:Number(staffId),
@@ -28,8 +24,7 @@ createButton.addEventListener("click",function(event){
 		position:position,
 	
 	};
-	
-	console.log("NEW STAFF DATA : ",staffData);
+
 	
 	fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/staffs",{
 		
@@ -48,8 +43,6 @@ createButton.addEventListener("click",function(event){
 			
 			return response.json();
 	}).then(createdStaff =>{
-		
-		console.log("CREATED SATFF DETAILS : ",createdStaff);
 		
 		window.location.href = "staff.html?id=" + createdStaff.staffId;
 		

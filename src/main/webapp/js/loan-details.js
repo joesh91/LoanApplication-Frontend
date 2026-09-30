@@ -5,13 +5,11 @@ if(!token){
 	window.location.herf="login.html";
 }
 
-console.log("TOKEN : ",token);
-
 const urlParam = new URLSearchParams(window.location.search);
 
 const loanId = urlParam.get("id");
 
-console.log("LOAND ID : ",loanId);
+
 
 fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/loans/"+loanId,{
 	
@@ -24,7 +22,7 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/loans/"+loanId,{
 		throw new Error("Faield to load loan details. "+response.status);
 	}
 	
-	console.log("RESPONSE : ",response);
+
 	return response.json();
 }).then(result =>{
 	
@@ -34,7 +32,6 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/loans/"+loanId,{
 			const startDate =  `${startDateFormatted[0]}-${String(startDateFormatted[1]).padStart(2, "0")}-${String(startDateFormatted[2]).padStart(2, "0")}`;
 			const endDate =  `${endDateFormatted[0]}-${String(endDateFormatted[1]).padStart(2, "0")}-${String(endDateFormatted[2]).padStart(2, "0")}`;
 	
-	console.log("LOAN DETAILS : ",result);
 	
 	document.getElementById("loanId").textContent = loanId;
 	document.getElementById("applicationId").textContent = result.applicationId;
@@ -54,7 +51,6 @@ const editLoanButton = document.getElementById("editLoanButton");
 	
 editLoanButton.addEventListener("click",function(){
 	
-	console.log("LOAN ID : ",loanId);
 	window.location.href = "loan-edit.html?id="+loanId;
 	
 });

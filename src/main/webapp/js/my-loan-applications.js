@@ -69,8 +69,6 @@ async function loadMyApplications() {
 
         const applications = await response.json();
 
-        console.log("MY APPLICATIONS : " + applications);
-
 
         //	HIDE LOADING 
 
@@ -133,7 +131,7 @@ async function loadMyApplications() {
 			
 			const dateParts = application.appDate;
 				
-				const formattedDate = `${dateParts[0]}-${String(dateParts[1]).padStart(2, "0")}-${String(dateParts[2]).padStart(2, "0")}`;
+			const formattedDate = `${dateParts[0]}-${String(dateParts[1]).padStart(2, "0")}-${String(dateParts[2]).padStart(2, "0")}`;
 
             applicationDateCell.textContent = formattedDate || "";
 
@@ -230,7 +228,6 @@ async function showUserName(){
 				}
 				
 			});
-			console.log("RESPONSE : "+response.status);
 			//===============
 			//	CHECK RESPONSE
 			//===============
@@ -249,8 +246,7 @@ async function showUserName(){
 			
 					
 			const user = await response.json();
-			
-			console.log("CURRENTE USER : ",user);	
+				
 			
 			//document.getElementById("customer").classList.add("d-none");
 			document.getElementById("customer").textContent =  user.userName ;	

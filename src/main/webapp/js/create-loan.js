@@ -5,7 +5,6 @@ const token = sessionStorage.getItem("token");
 if(!token){
 	window.location.href="login.html";
 }
-console.log("TOKEN : ",token);
 const createLoanButton = document.getElementById("createLoanButton");
 
 
@@ -31,8 +30,6 @@ createLoanButton.addEventListener("click",function(event){
 
 	}
 	
-	console.log("LOAN DATA JSON : ",loanData);
-	
 	fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/loans/",{
 		
 		method:"POST",
@@ -50,8 +47,6 @@ createLoanButton.addEventListener("click",function(event){
 		return response.json();
 		
 	}).then(createdLoan=>{
-		
-		console.log("LOAN CREATED SUCCESSFULLY. ",createdLoan);
 		
 		window.location.href = "loan.html";
 		

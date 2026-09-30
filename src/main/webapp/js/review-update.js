@@ -7,7 +7,7 @@ if(!token){
 	window.location.href="login.html";
 }
 
-console.log("token : "+token);
+
 
 //	GET REVIEW ID
 
@@ -16,8 +16,6 @@ const urlParam = new URLSearchParams(window.location.search);
 const reviewId = urlParam.get("id");
 const applicationId = urlParam.get("appid");
 
-console.log("REVIEW ID : "+reviewId);
-console.log("APPLICATION ID : "+applicationId);
 
 const reviewIdInput = document.getElementById("reviewId");
 const applicationIdInput = document.getElementById("applicationId");
@@ -83,8 +81,6 @@ async function updateReviewButtonPress(){
 		staff:ustaffIdInput.value
 	}
 	
-	console.log(" VALUE : "+updateValues.reviewId);
-	
 	try{
 		
 	const response = await fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/applicationreviews/"+reviewId,{
@@ -104,8 +100,6 @@ async function updateReviewButtonPress(){
 	}
 	
 	const updatedReviewDetails = await response.json();
-	
-	console.log("Successfully updated review details. "+updatedReviewDetails);
 	window.location.href="view-reviews.html";
 	
 	}catch(error){

@@ -21,7 +21,6 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/customers",{
 	return response.json();
 
 }).then(data=>{
-	console.log(data);
 	
 	const tableBody = document.getElementById("customerTable");
 	

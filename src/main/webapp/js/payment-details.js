@@ -22,8 +22,7 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/payments/"+payme
 		return response.json();
 		
 }).then(payment=>{
-	console.log(payment);
-	
+
 	const date = payment.paymentDate;
 
 				const formattedDate =
@@ -46,15 +45,10 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/payments/"+payme
 
 const editPaymentBtn = document.getElementById("editPayment");
 
-console.log("EDIT BUTTON "+ editPaymentBtn);
-
 editPaymentBtn.addEventListener("click",function(){
-	
-	console.log("button pressed");
 	
 	window.location.href = "payment-edit.html?id="+paymentId;
 	
-	console.log("button pressed done");
 });
 
 

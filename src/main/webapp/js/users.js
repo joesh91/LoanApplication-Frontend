@@ -1,4 +1,3 @@
-
 const token = sessionStorage.getItem("token");
 
 if(!token){
@@ -7,7 +6,6 @@ if(!token){
 
 const userTable = document.getElementById("userTable");
 
-console.log("TOKEN : ",token);
 fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/users",{
 	
 	method:"GET",
@@ -18,7 +16,7 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/users",{
 	if(!response.ok){
 		throw new Error("Failed to load user details. "+response.status);
 	}
-	console.log("RESPONSE : ",response.status);
+
 	return response.json();
 }).then(users =>{
 	
@@ -36,7 +34,7 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/users",{
 			<td> ${user.customerId} </td>
 		`;
 		userTable.appendChild(row);
-		console.log("USERS : "+user);
+
 	})
 	
 }).catch(error =>{
@@ -56,7 +54,7 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/users",{
 //	 CREATE USER BUTTON CAPTURE
 
 document.getElementById("userCreateButton").addEventListener("click",function(){
-	console.log("button clicked");
+	
 	window.location.href="user-create.html";
 	
 });

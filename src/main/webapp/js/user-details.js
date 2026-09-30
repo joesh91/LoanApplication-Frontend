@@ -5,13 +5,13 @@ if(!token){
 	window.location.href="login.html";
 }
 
-console.log("TOKEN : ",token);
+
 
 const urlParam = new URLSearchParams(window.location.search);
 
 const userId = urlParam.get("id");
 
-console.log("USER ID : ",userId);
+
 
 const userIdElement = document.getElementById("userId");
 const userNameElement = document.getElementById("userName");
@@ -83,7 +83,6 @@ document.getElementById("dashboard").addEventListener("click",function(){
 
 document.getElementById("deleteButton").addEventListener("click", async function(){
 	
-	console.log("BUTTON PRESSED");
 	try{
 		
 		const confirmed = confirm("Are you sure you want to delete this user ?");
@@ -109,7 +108,6 @@ document.getElementById("deleteButton").addEventListener("click", async function
 		
 		const result = await response.json();
 		
-		console.log("Successfully deleted user profile.");
 		window.location.href="../pages/users.html";
 
 		

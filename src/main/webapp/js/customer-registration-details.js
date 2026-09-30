@@ -29,9 +29,7 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/registration/"+r
 	return response.json();
 })
 .then(registration =>{
-	
-	console.log(registration);
-	
+
 	document.getElementById("registrationId").textContent = registrationId;
 	document.getElementById("firstName").textContent = registration.firstName;
 	document.getElementById("lastName").textContent = registration.lastName;
@@ -52,11 +50,7 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/registration/"+r
 
 const approveBtn = document.getElementById("approveBtn");
 
-console.log("APPROVE BUTTON CLICKED" +approveBtn.value);
-
 approveBtn.addEventListener("click",function(){
-	
-	console.log("APPROVE BUTTON CLICKED");
 	
 	fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/registration/approve/"+registrationId,{
 		
@@ -75,8 +69,6 @@ approveBtn.addEventListener("click",function(){
 	return response.json();
 }).then(data=>{
 	
-	console.log(data);
-	
 	alert("Customer registration approved successfully.");
 	
 	window.location.href="customer-registration.html";
@@ -93,7 +85,6 @@ approveBtn.addEventListener("click",function(){
 	
 	rejectBtn.addEventListener("click", function(){
 		
-		console.log("REGISTRATION ID : "+registrationId);
 	fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/registration/reject/"+registrationId,{
 		
 		method:"PUT",
@@ -112,7 +103,6 @@ approveBtn.addEventListener("click",function(){
 		
 		return response.json();
 	}).then(data=>{
-		console.log("REJECT RESPONSE : "+data);
 		
 		alert("Customer registration rejected successfully.");
 		
@@ -147,8 +137,7 @@ approveBtn.addEventListener("click",function(){
 	//	 GO BACK FUNCTION
 
 		document.getElementById("backBtn").addEventListener("click", function(){
-			
-			console.log("pressed");
+
 			window.location.href="../pages/customer-registration.html";
 			
 		});

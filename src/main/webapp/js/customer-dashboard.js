@@ -5,8 +5,6 @@ if(!token){
 	window.location.href="../pages/login.html";
 }
 
-
-console.log("TOKEN : "+token);
 //===============
 //	LOAD CURRENT CUSTOMER
 //===============
@@ -22,7 +20,7 @@ async function loadCurrentCustomer(){
 			}
 			
 		});
-		console.log("RESPONSE : "+response.status);
+
 		//===============
 		//	CHECK RESPONSE
 		//===============
@@ -41,10 +39,6 @@ async function loadCurrentCustomer(){
 		
 				
 		const user = await response.json();
-		
-		console.log("CURRENTE USER : ",user);		
-	
-
 				
 				//===============
 				//	DISPLAY USER NAME
@@ -59,11 +53,7 @@ async function loadCurrentCustomer(){
 				    // ==============================
 				
 				sessionStorage.setItem("customerId",user.customerId);
-				
-				console.log("CUSTOMER ID ",user.customerId);
-					
-					
-					
+													
 }catch(error){
 	
 	console.error("ERROR loading  : ",error);
@@ -197,7 +187,6 @@ async function loadApprovedApplications(){
 		
 		});
 		
-		console.log("loadApprovedApplications RESPONSE : "+response.status);
 	
 		//	CLIENT ERROR HANDLING
 		
@@ -231,16 +220,13 @@ async function loadApprovedApplications(){
 			}
 		
 		const applications = await response.json();
-		
-			console.log("JSON APLLICATIONS : ",applications);
 			
 			//	GET ONLY APPROVED APPLICATIONS 
 			
 			const approvedApplications = applications.filter(
 			            application => application.status === "APPROVED"
 			        );
-					
-			console.log("Approved APLLICATIONS : ",approvedApplications);
+
 			
 			tableBody.innerHTML = "";
 			

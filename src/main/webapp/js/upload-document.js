@@ -43,7 +43,7 @@ documentUploadForm.addEventListener ( "submit", function(event){
 		return response.text();
 	})
 	.then(data=>{
-		console.log(data);
+
 		document.getElementById("message").textContent = "Document uploaded successfully.";
 	})
 	.catch(error =>{

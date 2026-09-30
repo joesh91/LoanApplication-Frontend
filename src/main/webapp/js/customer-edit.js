@@ -9,8 +9,6 @@ const urlParam = new URLSearchParams(window.location.search);
 
 const customerID = urlParam.get("id");
 
-console.log("CUSTOMER ID : ",customerID);
-
 fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/customers/"+customerID,{
 	
 	method:"GET",
@@ -19,15 +17,13 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/customers/"+cust
 	}
 
 }).then(response =>{
-	console.log("CUSTOMER RESPONSE : ",response.status);
+
 		if(!response.ok){
 			throw new Error("Faield to load customer details.");
 		}
-		console.log("NO RESPONSE ERROR CAUGHT.");
+
 		return response.json();
 }).then(customer =>{
-	
-	console.log("CUSTOMER : ",customer);
 	
 	document.getElementById("customerID").value = customer.customerID;
 	document.getElementById("firstName").value = customer.firstName;
@@ -58,8 +54,6 @@ updateButton.addEventListener("click",function(){
 	const email 		= document.getElementById("email").value;
 	const address 		= document.getElementById("address").value;
 		
-	console.log("first name : ",firstName);
-
 	const customerData={
 		
 		customerID:Number(customerID),
@@ -90,7 +84,6 @@ console.log("CUSTOEMR DATA JSON : ",customerData);
 	
 	}).then(result=>{
 		
-		console.log("RESULT : ",result);
 		window.alert("done");
 		window.location.href="customer-details.html?id="+customerID;
 	

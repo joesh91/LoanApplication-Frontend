@@ -39,7 +39,6 @@
 		
 			//	RECEIVE ACTUAL DATA
 	.then(data =>{
-		console.log(data);
 		
 		const tableBody = document.getElementById("loanApplicationTable");
 		

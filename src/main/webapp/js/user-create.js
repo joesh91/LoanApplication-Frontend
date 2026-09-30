@@ -1,84 +1,76 @@
 
 const token = sessionStorage.getItem("token");
 
-if(!token){
-	window.location.href="login.html";
+if (!token) {
+    window.location.href = "login.html";
 }
-
-console.log("TOKEN : ",token);
-
 
 const createbutton = document.getElementById("createUserButton");
 
-createbutton.addEventListener("click",function(event){
-	
-	event.preventDefault();
-	
-	const userId = document.getElementById("userId").value;
-	const userName = document.getElementById("userName").value;
-	const role =  document.getElementById("role").value;
-	const customerId = document.getElementById("customerId").value;
+createbutton.addEventListener("click", function(event) {
 
-	console.log(staffId,name,email,position);
+    event.preventDefault();
 
-	const userData = {
-		
-		userId:userId,
-		userName:userName,
-		role:role,
-		customerId:customerId
-		
-	}
+    const userId = document.getElementById("userId").value;
+    const userName = document.getElementById("userName").value;
+    const role = document.getElementById("role").value;
+    const customerId = document.getElementById("customerId").value;
 
-	fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/staffs",{
-		
-		method:"POST",
-		headers:{},
-		body:JSON.stringify(userData)
-		
-	}).then(response => {
-		if(!response.ok){
-			throw new Error("Error : ",response.status);
-		}
-		
-		return response.json();
-		
-	}).then(user =>{
-		
-		console.log("STAFF DETAILS CREATED SUCCESSFULLY. ",user);
-		
-		window.location.href = "users.html";
-		
-	}).catch(error =>{
-		
-		console.error("Error ",error);
-			
-			document.getElementById("staffMessage").innerHTML = `<div class="alert alert-danger"> Failed to createstaff details. </div>`;
-		
-	});
+    const userData = {
 
-	
+        userId: userId,
+        userName: userName,
+        role: role,
+        customerId: customerId
+
+    }
+
+    fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/staffs", {
+
+        method: "POST",
+        headers: {},
+        body: JSON.stringify(userData)
+
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error("Error : ", response.status);
+        }
+
+        return response.json();
+
+    }).then(user => {
+
+        window.location.href = "users.html";
+
+    }).catch(error => {
+
+        console.error("Error ", error);
+
+        document.getElementById("staffMessage").innerHTML = `<div class="alert alert-danger"> Failed to createstaff details. </div>`;
+
+    });
+
+
 });
 
 
 //	 LOGOUT BUTTON
 
-document.getElementById("logout").addEventListener("click",function(){
-	
-	sessionStorage.removeItem("token");
-	
-	window.location.href="../pages/login.html";
-	
+document.getElementById("logout").addEventListener("click", function() {
+
+    sessionStorage.removeItem("token");
+
+    window.location.href = "../pages/login.html";
+
 });
 
 //	 CANEL BUTTON
 
-document.getElementById("backButton").addEventListener("click",function(){
-	
-	console.log("CANCEL BUTTON PRESSED.");
-	
-	window.location.href="../pages/users.html";
-	
+document.getElementById("backButton").addEventListener("click", function() {
+
+
+    window.location.href = "../pages/users.html";
+
 });
 
 

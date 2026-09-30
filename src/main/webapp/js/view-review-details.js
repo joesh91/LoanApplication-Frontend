@@ -7,9 +7,6 @@ if(!token){
 	window.location.href="login.html";
 }
 
-console.log("token : "+token);
-
-
 //	GET REVIEW ID DETAILS
 
 const urlParam = new URLSearchParams(window.location.search);
@@ -17,8 +14,6 @@ const urlParam = new URLSearchParams(window.location.search);
 const reviewId =  urlParam.get("id");
 const applicationId = urlParam.get("applicationId");
 
-console.log("id : "+reviewId );
-console.log("application ID : "+applicationId);
 
 async function getApplicationDetails(){
 	
@@ -36,8 +31,6 @@ async function getApplicationDetails(){
 	}
 	
 	const applicationDetails = await response.json();
-	
-	console.log(applicationDetails);
 	
 	const dateParts = applicationDetails.appDate;
 
@@ -79,18 +72,9 @@ async function getApplicationReviewDetails(){
 	
 	const reviewDetails = await response.json();
 	
-	console.log("FULL REVIEW DETAILS:", reviewDetails);
-	console.log("REVIEW DATE:", reviewDetails.reviewDate);
-	console.log("DATE TYPE:", typeof reviewDetails.reviewDate);
-	
-	console.log("REVIEW OBEJCT DETAILS "+reviewDetails.reviewDate);
-	
-	
 	const dateParts = reviewDetails.reviewDate;
 	const formattedDate = dateParts[0] + "-" + String(dateParts[1]).padStart(2, "0") + "-" +String(dateParts[2]).padStart(2, "0");
-	
-	console.log("FORMATTED DATES : "+formattedDate);
-	
+		
 	document.getElementById("reviewId").textContent = reviewDetails.reviewId;
 	document.getElementById("loanApplicationId").textContent = reviewDetails.loanApplication;
 	document.getElementById("staffId").textContent = reviewDetails.staff;

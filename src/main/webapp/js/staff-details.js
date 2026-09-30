@@ -1,8 +1,6 @@
 
 const token = sessionStorage.getItem("token");
 
-console.log("TOKEN : ",token);
-
 if (!token) {
     window.location.href = "login.html";
 }
@@ -10,8 +8,6 @@ if (!token) {
 const urlParam = new URLSearchParams(window.location.search);
 
 const staffId = urlParam.get("id");
-
-console.log("STAFF ID : ",staffId);
 
 fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/staffs/"+staffId,{
 	
@@ -83,8 +79,7 @@ document.getElementById("logout").addEventListener("click", function(){
 
 //	DELETE BUTTON
 
-document.getElementById("deleteButton").addEventListener("click",async function(){
-		
+document.getElementById("deleteButton").addEventListener("click",async function(){	
 	
 	try{
 		
@@ -108,7 +103,6 @@ document.getElementById("deleteButton").addEventListener("click",async function(
 			throw new Error("Failed to delete staff profile.");
 		}
 		
-		console.log("DELETEED SUCCESSFULLY.");
 		window.location.href="staff.html";
 	}catch(error){
 		

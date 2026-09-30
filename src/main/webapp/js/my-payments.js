@@ -180,7 +180,7 @@ async function showUserName(){
 				}
 				
 			});
-			console.log("RESPONSE : "+response.status);
+			
 			//===============
 			//	CHECK RESPONSE
 			//===============
@@ -198,9 +198,7 @@ async function showUserName(){
 					//===============
 			
 					
-			const user = await response.json();
-			
-			console.log("CURRENTE USER : ",user);	
+			const user = await response.json();	
 			
 			//document.getElementById("customer").classList.add("d-none");
 			document.getElementById("customer").textContent =  user.userName ;	

@@ -21,8 +21,6 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/loans",{
 	
 }).then(loans =>{
 	
-	console.log("LOANS : ",loans);
-	
 	const tableBody = document.getElementById("loanTable");
 	
 	loans.forEach(loan=>{

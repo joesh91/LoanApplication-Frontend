@@ -26,12 +26,6 @@ async function loadCurrentCustomer() {
             }
         );
 
-
-        console.log(
-            "Customer profile response : " + response.status
-        );
-
-
         // -------------------------------------------------
         // CHECK UNAUTHORIZED
         // -------------------------------------------------
@@ -65,9 +59,6 @@ async function loadCurrentCustomer() {
         // -------------------------------------------------
 
         const customer = await response.json();
-
-        console.log("CURRENT CUSTOMER : ", customer);
-
 
         // -------------------------------------------------
         // DISPLAY CUSTOMER DETAILS
@@ -176,7 +167,7 @@ async function showUserName(){
 				}
 				
 			});
-			console.log("RESPONSE : "+response.status);
+
 			//===============
 			//	CHECK RESPONSE
 			//===============
@@ -195,8 +186,6 @@ async function showUserName(){
 			
 					
 			const user = await response.json();
-			
-			console.log("CURRENTE USER : ",user);	
 			
 			//document.getElementById("customer").classList.add("d-none");
 			document.getElementById("customer").textContent =  user.userName ;	

@@ -8,7 +8,6 @@ const urlParam = new URLSearchParams(window.location.search);
 
 const paymentId = urlParam.get("id");
 
-console.log("PAYMENT ID : " +paymentId);
 
 fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/payments/"+paymentId,{
 	
@@ -45,15 +44,11 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/payments/"+payme
 
 //	UPDATE PAYMENT
 
-
-
 const paymentForm = document.getElementById("paymentForm");
 
 paymentForm.addEventListener("submit",function(event){
 	
 	event.preventDefault();
-	
-	console.log("update button pressed");
 	
 	const amount = document.getElementById("amount").value;
 	const loanId = document.getElementById("loanId").value;
@@ -81,15 +76,13 @@ paymentForm.addEventListener("submit",function(event){
 			 body:JSON.stringify(paymentData)
 		
 	}).then(response=>{
-		console.log("RESPONSE STATUS : "+response.status);
+
 			if(!response.ok){
 				throw new Error("Failed to update payment");
 			}		
 			return response.json();
 	}).then(updatedPayment =>{
-		console.log("Payment updated successfully."); 
-	
-		
+
 		alert("Payment updated successfully.")
 		
 		window.location.href="payment.html";

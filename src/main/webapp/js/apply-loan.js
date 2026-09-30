@@ -49,17 +49,13 @@ loanApplicationForm.addEventListener("submit",function(event){
 	})
 	.then(data =>{
 		
-		console.log(data)
-		
 		sessionStorage.setItem("applicationId",data.applicationId);
 		
 		window.location.href="upload-document.html";
 	}
 		
 	).catch(error=>{
-		
-		console.error(error);
-		
+
 		document.getElementById("message").textContent = "Failed to submit loan application."
 	}
 		

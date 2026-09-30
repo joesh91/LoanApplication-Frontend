@@ -5,7 +5,6 @@ if(!token){
 	window.location.href="login.html";
 }
 
-console.log("TOKEN DETAILS : "+token);
 
 fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/payments",{
 
@@ -32,8 +31,6 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/payments",{
 		
 		
 }).then(data=>{
-	console.log(data);
-	
 	const tableBody = document.getElementById("paymentTable");
 	
 		data.forEach(payment =>{

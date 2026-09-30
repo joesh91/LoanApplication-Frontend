@@ -12,8 +12,6 @@ const urlParams = new URLSearchParams(window.location.search);
 
 const applicationId = urlParams.get("id");
 
-console.log("APPLICATION ID : "+ applicationId);
-
 
 // Get application from backend
 
@@ -28,7 +26,6 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/loanApplications
 }).then(response => response.json()
 
 ).then(application =>{
-	console.log(application);
 	
 	document.getElementById("applicationId").textContent = application.applicationId;
 	document.getElementById("loanType").textContent = application.loanType;
@@ -47,7 +44,6 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/loanApplications
 
 //  GET LOAN DOCUMENTS TO SURFACE
 
-console.log("RESPONSE PRINTING 1.");
 fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/loanDocuments/getByApplicationId/"+applicationId,{
 	
 	
@@ -59,18 +55,15 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/loanDocuments/ge
 }
 
 ).then(response =>{
-	console.log("RESPONSE PRINTING 2.");
+
 	if(!response.ok){
-		console.log("STATUS :", response.status);
-		   console.log("STATUS TEXT :", response.statusText);
 		throw new Error("Failed to get loan documents.");
 			}
-	console.log("RESPONSE PRINTING.");
+
 	return response.json();
 	
 }
 ).then(documents=>{
-	console.log("LOAN DOCUMENTS : "+documents);
 	
 	const documentsContainer = document.getElementById("documentsContainer");
 	

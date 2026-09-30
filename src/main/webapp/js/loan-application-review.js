@@ -1,5 +1,5 @@
 const token = sessionStorage.getItem("token");
-console.log("loan-application-review js file loaded.");
+
 if(!token){
 	window.location.href="login.html";
 }
@@ -8,7 +8,6 @@ const urlParams = new URLSearchParams(window.location.search);
 
 const applicationId = urlParams.get("id");
 
-console.log("APPLICATION ID in review js : "+applicationId);
 
 //	GET LOAN APPLICATION
 
@@ -24,19 +23,15 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/loanApplications
 }
 
 ).then(response=>{
-	console.log("STATUS : "+response.status);
-	console.log("RESPONSE URL : "+response.url);
 	
 	if(!response.ok){
-		console.log("response is not ok "+response.status);
+	
 		throw new Error("Failed to load application details this is review js.");
 	}
 	return response.json();
 }
 ).then(application=>{
-	console.log("APPLICATION : "+application.applicationId);
-	console.log("Payment review loaded.");
-	
+
 	const dateParts = application.appDate;
 
 	const formattedDate =
@@ -76,18 +71,12 @@ submitReviewButton.addEventListener("click",function(){
 	const decision	=	decisionInput.value;
 	const comments	=	commentsInput.value;
 	
-	console.log("STAFF ID : "+staffId);
-	console.log("DECISION : "+decision);
-	console.log("COMMENTS : "+comments);
-	
 	const reviewData={
 		loanApplication:Number(applicationId),
 		staff:Number(staffId),
 		decision:decision,
 		comments:comments
 	}
-	
-	console.log("REVIEW DATA JSON : "+reviewData);
 	
 
 //	SEND JSON REVIEW OBJECT TO SERVER DO THE FETCH
@@ -114,8 +103,6 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/applicationrevie
 	return response.json();
 }
 ).then(result=>{
-	
-	console.log("REVIEW DATA : ",result);
 	
 	reviewMessage.innerHTML="<div class='alert alert-success'> Application review submitted successfully. </div>";
 	

@@ -9,7 +9,6 @@ const urlParams = new URLSearchParams(window.location.search);
 
 const customerID = urlParams.get("id");
 
-console.log(customerID);
 
 fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/customers/"+customerID,{
 	method:"GET",
@@ -23,7 +22,6 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/customers/"+cust
 	return response.json();
 	
 }).then(customer=>{
-	console.log(customer);
 	
 		document.getElementById("customerID").textContent =customerID;
 		document.getElementById("firstName").textContent = customer.firstName;
