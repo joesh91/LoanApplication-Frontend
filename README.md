@@ -73,6 +73,10 @@ The application uses JavaScript to communicate with the backend REST APIs and dy
 
 ---
 
+## 🖥️ Application Preview
+
+![Frontend Project Preview](screenshots/front.png)
+
 ## 🏗️ Application Architecture
 
 The frontend communicates with the backend through REST APIs.
@@ -124,6 +128,8 @@ JavaScript is responsible for tasks such as:
 
 ```text
 LoanApplication-Frontend/
+├── screenshots/
+│	└── front.png
 └── src/
     └── main/
         └── webapp/
@@ -172,8 +178,6 @@ LoanApplication-Frontend/
             │   ├── lib/
             │   └── web.xml
             │
-			├── screenshots/
-			│	└── front.png
 			│
             └── index.html
 ```
