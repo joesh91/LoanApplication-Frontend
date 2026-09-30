@@ -46,7 +46,7 @@ const editCustomerButton = document.getElementById("editCustomerBtn");
 
 editCustomerButton.addEventListener("click",function(){
 	
-	window.location.href="customer-edit.html?id="+customerID;
+	window.location.href="../pages/customer-edit.html?id="+customerID;
 	
 	
 });
@@ -69,7 +69,12 @@ document.getElementById("logout").addEventListener("click", function(){
 	
 });
 
+// 	BACK BUTTON
 
-
+document.getElementById("backBtn").addEventListener("click", function(){
+	
+	window.location.href="../pages/customer.html";
+	
+});
 
 

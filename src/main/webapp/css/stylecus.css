@@ -1,0 +1,562 @@
+@charset "UTF-8";
+
+/* =====================================================
+   CUSTOMER SIDE — GLOBAL DESIGN
+   ===================================================== */
+
+body {
+    background-color: #F4F3F0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #202020;
+    margin: 0;
+}
+
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+
+.navbar {
+    background-color: #171717 !important;
+    min-height: 68px;
+    border-bottom: 1px solid #2D2D2D;
+}
+
+.navbar-brand {
+    color: #FFFFFF !important;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.navbar-brand:hover {
+    color: #F28C28 !important;
+}
+
+.navbar .btn-outline-light {
+    border-color: #777777;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 0.45rem 1rem;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.navbar .btn-outline-light:hover {
+    background-color: #F28C28;
+    border-color: #F28C28;
+    color: #FFFFFF;
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+   ===================================================== */
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   DASHBOARD WELCOME SECTION
+   ===================================================== */
+
+.dashboard-welcome {
+    position: relative;
+    background-color: #202020;
+    border-radius: 12px;
+    padding: 3rem 3.25rem;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.dashboard-welcome::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    right: -100px;
+    top: -140px;
+    border: 1px solid rgba(242, 140, 40, 0.35);
+    border-radius: 50%;
+}
+
+.dashboard-welcome::before {
+    content: "";
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    right: -45px;
+    top: -95px;
+    border: 1px solid rgba(242, 140, 40, 0.18);
+    border-radius: 50%;
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.dashboard-eyebrow {
+    color: #F28C28;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    margin-bottom: 0.8rem;
+}
+
+.dashboard-welcome h1 {
+    color: #FFFFFF;
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.dashboard-welcome h1 span {
+    color: #F28C28;
+}
+
+.welcome-description {
+    color: #C8C8C8;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   PAGE HEADERS
+   ===================================================== */
+
+.page-header {
+    margin-bottom: 2rem;
+}
+
+.page-header h2 {
+    font-weight: 600;
+    color: #202020;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.2px;
+}
+
+.page-header h4 {
+    font-weight: 600;
+    color: #242424;
+    margin-bottom: 0.4rem;
+}
+
+.page-header p {
+    margin-bottom: 0;
+    color: #6B7280;
+}
+
+
+/* =====================================================
+   DASHBOARD SERVICE CARDS
+   ===================================================== */
+
+.dashboard-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E0DC;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.055);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 24px rgba(0, 0, 0, 0.10);
+    border-color: #D6D2CC;
+}
+
+.dashboard-card .card-body {
+    padding: 1.7rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-card-icon {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    min-height: 28px;
+    padding: 0.35rem 0.65rem;
+    margin-bottom: 1rem;
+    background-color: #F7E8D8;
+    color: #B65F0A;
+    border-radius: 4px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+}
+
+.dashboard-card .card-title {
+    font-weight: 600;
+    color: #202020;
+    margin-bottom: 0.7rem;
+}
+
+.dashboard-card .card-text {
+    color: #6B7280;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+
+/* =====================================================
+   GENERAL PAGE CARDS
+   ===================================================== */
+
+.page-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E0DC;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.2s ease;
+}
+
+.page-card:hover {
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.09);
+}
+
+.page-card .card-header {
+    background-color: #242424;
+    color: #FFFFFF;
+    border-bottom: none;
+    padding: 1rem 1.25rem;
+    border-radius: 10px 10px 0 0;
+}
+
+.page-card .card-header h5,
+.page-card .card-header h4 {
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.page-card .card-body {
+    padding: 1.5rem;
+}
+
+.page-card .card-title {
+    font-weight: 600;
+    color: #202020;
+    margin-bottom: 0.75rem;
+}
+
+.page-card .card-text {
+    color: #6B7280;
+}
+
+
+/* =====================================================
+   DASHBOARD TABLE
+   ===================================================== */
+
+.dashboard-table-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E0DC;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.055);
+    overflow: hidden;
+}
+
+.dashboard-table-card .card-body {
+    padding: 0;
+}
+
+.table {
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.table thead {
+    background-color: #242424;
+    color: #FFFFFF;
+}
+
+.table thead th {
+    border-color: #242424;
+    padding: 1rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.table tbody td {
+    padding: 1rem;
+    color: #333333;
+    border-color: #EAE7E2;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #FFF8F0;
+}
+
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.btn-primary {
+    background-color: #F28C28;
+    border-color: #F28C28;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 0.55rem 1.15rem;
+    font-weight: 500;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #D97706;
+    border-color: #D97706;
+    color: #FFFFFF;
+    transform: translateY(-1px);
+}
+
+.btn-dark {
+    background-color: #242424;
+    border-color: #242424;
+}
+
+.btn-dark:hover {
+    background-color: #171717;
+    border-color: #171717;
+}
+
+.btn-outline-primary {
+    color: #B65F0A;
+    border-color: #F28C28;
+    border-radius: 5px;
+}
+
+.btn-outline-primary:hover {
+    background-color: #F28C28;
+    border-color: #F28C28;
+    color: #FFFFFF;
+}
+
+.btn-secondary {
+    background-color: #555555;
+    border-color: #555555;
+    border-radius: 5px;
+}
+
+.btn-secondary:hover {
+    background-color: #3D3D3D;
+    border-color: #3D3D3D;
+}
+
+
+/* =====================================================
+   FORMS
+   ===================================================== */
+
+.form-label {
+    color: #303030;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.45rem;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid #D2D0CC;
+    border-radius: 6px;
+    min-height: 44px;
+    color: #292929;
+    background-color: #FFFFFF;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #F28C28;
+    box-shadow: 0 0 0 0.15rem rgba(242, 140, 40, 0.18);
+}
+
+.form-control::placeholder {
+    color: #9A9A9A;
+}
+
+.form-control[readonly] {
+    background-color: #F1F0ED;
+    color: #555555;
+    cursor: not-allowed;
+}
+
+
+/* =====================================================
+   STATUS BADGES
+   ===================================================== */
+
+.status-badge {
+    display: inline-block;
+    padding: 0.45rem 0.7rem;
+    border-radius: 5px;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.status-pending {
+    background-color: #FFF3CD;
+    color: #856404;
+}
+
+.status-approved {
+    background-color: #D1E7DD;
+    color: #0F5132;
+}
+
+.status-rejected {
+    background-color: #F8D7DA;
+    color: #842029;
+}
+
+.status-processing {
+    background-color: #DDEBF7;
+    color: #245269;
+}
+
+.status-completed {
+    background-color: #D1E7DD;
+    color: #0F5132;
+}
+
+.status-failed {
+    background-color: #F8D7DA;
+    color: #842029;
+}
+
+.status-cancelled {
+    background-color: #E2E3E5;
+    color: #41464B;
+}
+
+
+/* =====================================================
+   ALERTS
+   ===================================================== */
+
+.alert {
+    border-radius: 7px;
+    border-width: 1px;
+}
+
+.alert-success {
+    background-color: #EDF7F1;
+    border-color: #C8E6D3;
+    color: #285C3B;
+}
+
+.alert-danger {
+    background-color: #FDF0F1;
+    border-color: #F2C9CD;
+    color: #842029;
+}
+
+.alert-info {
+    background-color: #EEF5F8;
+    border-color: #C9DFE8;
+    color: #315A69;
+}
+
+
+/* =====================================================
+   TEXT
+   ===================================================== */
+
+.text-muted {
+    color: #6B7280 !important;
+}
+
+.text-accent {
+    color: #F28C28 !important;
+}
+
+
+/* =====================================================
+   LINKS
+   ===================================================== */
+
+a {
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+    .page-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .dashboard-welcome {
+        padding: 2.25rem 2rem;
+    }
+
+    .dashboard-welcome h1 {
+        font-size: 2rem;
+    }
+
+    .dashboard-card .card-body {
+        padding: 1.4rem;
+    }
+
+    .page-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .table thead th,
+    .table tbody td {
+        padding: 0.8rem;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .navbar {
+        min-height: 62px;
+    }
+
+    .navbar-brand {
+        font-size: 0.95rem;
+    }
+
+    .navbar .btn-outline-light {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .dashboard-welcome {
+        padding: 2rem 1.5rem;
+        border-radius: 9px;
+    }
+
+    .dashboard-welcome h1 {
+        font-size: 1.65rem;
+    }
+
+    .welcome-description {
+        font-size: 0.9rem;
+    }
+
+    .page-header h2 {
+        font-size: 1.4rem;
+    }
+
+}

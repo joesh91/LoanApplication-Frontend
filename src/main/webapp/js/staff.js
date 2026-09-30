@@ -29,11 +29,17 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/staffs",{
 		console.log("STAFF : ",staff.staffId);
 		const row = document.createElement("tr");
 		
+		// STAFF POSITION SEPERATE VALUES
+		
+		function formatPosition(position) {
+		    return position.replace(/([a-z])([A-Z])/g, "$1 $2");
+		}
+	
 			row.innerHTML = `
 				<td><a href="staff-details.html?id=${staff.staffId}">  ${staff.staffId} </a></td>
 				<td> ${staff.name}</td>
 				<td> ${staff.email}</td>
-				<td> ${staff.position}</td>
+				<td> ${formatPosition(staff.position)}</td>
 			`;
 			staffTable.appendChild(row);	
 	});

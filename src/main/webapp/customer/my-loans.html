@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>My Loan Applications</title>
+<title>My Loans</title>
 
 <!-- Bootstrap CSS -->
 <link
@@ -17,7 +17,6 @@
 
 <!-- Our CSS -->
 <link rel="stylesheet" href="../css/stylecus.css">
-
 
 </head>
 
@@ -62,8 +61,8 @@
 
             <button
                 type="button"
-                id="logout"
-                class="btn btn-outline-light">
+                class="btn btn-outline-light"
+                id="logoutButton">
 
                 Logout
 
@@ -85,25 +84,18 @@
 
     <div class="page-header">
 
-        <h2>My Loan Applications</h2>
+        <h2>My Loans</h2>
 
         <p>
-            View and track the loan applications you have submitted.
+            View your active loans and make payments.
         </p>
 
     </div>
 
 
-    <!-- ================= APPLICATION CARD ================= -->
+    <!-- ================= LOANS CARD ================= -->
 
-    <div class="page-card">
-
-        <div class="card-header">
-
-            <h5>Loan Application Records</h5>
-
-        </div>
-
+    <div class="dashboard-table-card">
 
         <div class="card-body">
 
@@ -114,35 +106,21 @@
                 id="loadingMessage"
                 class="alert alert-info">
 
-                Loading your loan applications...
+                Loading your loans...
 
             </div>
 
 
-            <!-- ERROR MESSAGE -->
+            <!-- ERROR / EMPTY MESSAGE -->
 
-            <div
-                id="errorMessage"
-                class="alert alert-danger d-none">
-            </div>
+            <div id="loanMessage"></div>
 
 
-            <!-- NO APPLICATIONS MESSAGE -->
-
-            <div
-                id="noApplicationsMessage"
-                class="alert alert-info d-none">
-
-                You have not submitted any loan applications yet.
-
-            </div>
-
-
-            <!-- APPLICATION TABLE -->
+            <!-- LOANS TABLE -->
 
             <div
                 class="table-responsive d-none"
-                id="applicationContainer">
+                id="loanTableContainer">
 
                 <table
                     class="table table-hover align-middle">
@@ -151,17 +129,21 @@
 
                         <tr>
 
-                            <th>Application ID</th>
+                            <th>Loan ID</th>
 
                             <th>Loan Type</th>
 
-                            <th>Requested Amount</th>
+                            <th>Approved Amount</th>
 
-                            <th>Purpose</th>
+                            <th>Interest Rate</th>
+
+                            <th>Duration</th>
+
+                            <th>Start Date</th>
+
+                            <th>End Date</th>
 
                             <th>Status</th>
-
-                            <th>Application Date</th>
 
                             <th>Action</th>
 
@@ -170,7 +152,7 @@
                     </thead>
 
 
-                    <tbody id="applicationsTableBody">
+                    <tbody id="loanTableBody">
 
                     </tbody>
 
@@ -178,44 +160,40 @@
 
             </div>
 
-
-            <!-- ================= BUTTONS ================= -->
-
-            <div class="mt-4 pt-3 border-top">
-
-                <button
-                    type="button"
-                    class="btn btn-primary me-2"
-                    id="applyAnotherLoanButton">
-
-                    Apply for Another Loan
-
-                </button>
-
-
-                <button
-                    type="button"
-                    class="btn btn-secondary"
-                    id="backtoDashBoardButton">
-
-                    Back to Dashboard
-
-                </button>
-
-            </div>
-
-
         </div>
+
+    </div>
+
+
+    <!-- ================= BACK BUTTON ================= -->
+
+    <div class="mt-4">
+
+        <button
+            type="button"
+            class="btn btn-secondary"
+            id="backButton">
+
+            Back to Dashboard
+
+        </button>
 
     </div>
 
 </main>
 
 
-<!-- JavaScript -->
+<!-- ================= BOOTSTRAP JS ================= -->
 
-<script src="../js/my-loan-applications.js"></script>
-```
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- My Loans JS -->
+
+<script src="../js/my-loans.js"></script>
+
 
 </body>
 

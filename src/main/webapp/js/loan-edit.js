@@ -113,6 +113,15 @@ document.getElementById("dashboard").addEventListener("click", function(){
 document.getElementById("logout").addEventListener("click", function(){
 	
 	sessionStorage.removeItem("token");
-	window.location.href="login.html";
+	window.location.href="../pages/login.html";
+	
+});
+
+//		CANCEL BUTTON
+
+document.getElementById("cancelBtn").addEventListener("click", function(){
+	
+	console.log("CANcel button")
+	window.location.href="../pages/loan-details.html?id="+loanId;
 	
 });

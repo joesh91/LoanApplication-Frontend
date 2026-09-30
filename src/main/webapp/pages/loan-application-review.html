@@ -1,290 +1,324 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Review Confirmation</title>
 
-<meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Application Review Confirmation</title>
-
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-	rel="stylesheet">
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 
-</head>
 
+</head>
 
 <body>
 
 
-	<!--  NAV BAR  -->
-		<nav class="navbar navbar-dark bg-dark">
-		
-		<div class="container">
-		
-			<a class="navbar-brand" id="dashboard">
-				Loan Management System
-			</a>
-			
-			<div>
-			<a class="btn btn-outline-light me-2" id="dashboard">
-				Dashboard
-			</a>
-			
-			<button type="button" class="btn btn-outline-light" id="logout">
-				Logout
-			</button>
-			</div>
-		</div>
-	</nav>
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark ">
 
+    <div class="container">
 
+        <a class="navbar-brand" href="dashboard.html">
+            Loan Management System
+        </a>
 
-	<!-- ================= MAIN CONTENT ================= -->
+        <div>
 
-	<div class="container mt-5 mb-5">
+            <a class="btn btn-outline-light me-2" id="dashboard">
+                Dashboard
+            </a>
 
+            <button type="button" class="btn btn-outline-light" id="logout">
+                Logout
+            </button>
 
-		<h1>Application Review Confirmation</h1>
+        </div>
 
+    </div>
 
-		<p class="text-muted">Confirm the review details before submitting
-			the final decision.</p>
+</nav>
 
 
+<!-- MAIN CONTENT -->
+<main>
 
-		<!-- ================= APPLICATION INFORMATION ================= -->
+    <div class="container page-container py-5">
 
-		<div class="card mt-4">
+        <!-- PAGE HEADER -->
+        <div class="page-header">
 
-			<div class="card-header">
+            <h2>Application Review Confirmation</h2>
 
-				<h4 class="mb-0">Loan Application</h4>
+            <p>
+                Confirm the review details before submitting the final decision.
+            </p>
 
-			</div>
+        </div>
 
 
-			<div class="card-body">
+        <!-- APPLICATION INFORMATION -->
+        <div class="page-card mb-4">
 
+            <div class="card-header">
 
-				<div class="row">
+                <h5>Loan Application</h5>
 
+            </div>
 
-					<!-- APPLICATION ID -->
 
-					<div class="col-md-6 mb-3">
+            <div class="card-body">
 
-						<strong> Application ID: </strong> <span id="applicationId">
+                <div class="row g-4">
 
-						</span>
+                    <!-- APPLICATION ID -->
+                    <div class="col-md-6">
 
-					</div>
+                        <div class="fw-semibold text-muted mb-1">
+                            Application ID
+                        </div>
 
+                        <div id="applicationId"></div>
 
+                    </div>
 
-					<!-- CUSTOMER ID -->
 
-					<div class="col-md-6 mb-3">
+                    <!-- CUSTOMER ID -->
+                    <div class="col-md-6">
 
-						<strong> Customer ID: </strong> <span id="customerId"> </span>
+                        <div class="fw-semibold text-muted mb-1">
+                            Customer ID
+                        </div>
 
-					</div>
+                        <div id="customerId"></div>
 
+                    </div>
 
 
-					<!-- LOAN TYPE -->
+                    <!-- LOAN TYPE -->
+                    <div class="col-md-6">
 
-					<div class="col-md-6 mb-3">
+                        <div class="fw-semibold text-muted mb-1">
+                            Loan Type
+                        </div>
 
-						<strong> Loan Type: </strong> <span id="loanType"> </span>
+                        <div id="loanType"></div>
 
-					</div>
+                    </div>
 
 
+                    <!-- REQUESTED AMOUNT -->
+                    <div class="col-md-6">
 
-					<!-- REQUESTED AMOUNT -->
+                        <div class="fw-semibold text-muted mb-1">
+                            Requested Amount
+                        </div>
 
-					<div class="col-md-6 mb-3">
+                        <div id="requestedAmount"></div>
 
-						<strong> Requested Amount: </strong> <span id="requestedAmount">
+                    </div>
 
-						</span>
 
-					</div>
+                    <!-- PURPOSE -->
+                    <div class="col-12">
 
+                        <div class="fw-semibold text-muted mb-1">
+                            Purpose
+                        </div>
 
+                        <div id="purpose"></div>
 
-					<!-- PURPOSE -->
+                    </div>
 
-					<div class="col-md-12 mb-3">
 
-						<strong> Purpose: </strong> <span id="purpose"> </span>
+                    <!-- APPLICATION DATE -->
+                    <div class="col-md-6">
 
-					</div>
+                        <div class="fw-semibold text-muted mb-1">
+                            Application Date
+                        </div>
 
+                        <div id="applicationDate"></div>
 
+                    </div>
 
-					<!-- APPLICATION DATE -->
 
-					<div class="col-md-6 mb-3">
+                    <!-- CURRENT STATUS -->
+                    <div class="col-md-6">
 
-						<strong> Application Date: </strong> <span id="applicationDate">
+                        <div class="fw-semibold text-muted mb-1">
+                            Current Status
+                        </div>
 
-						</span>
+                        <div id="status"></div>
 
-					</div>
+                    </div>
 
+                </div>
 
+            </div>
 
-					<!-- CURRENT STATUS -->
+        </div>
 
-					<div class="col-md-6 mb-3">
 
-						<strong> Current Status: </strong> <span id="status"> </span>
+        <!-- REVIEW INFORMATION -->
+        <div class="page-card mb-4">
 
-					</div>
+            <div class="card-header">
 
+                <h5>Review Information</h5>
 
-				</div>
+            </div>
 
-			</div>
 
-		</div>
+            <div class="card-body">
 
+                <!-- STAFF ID -->
+                <div class="mb-4">
 
+                    <label for="staffId" class="form-label fw-semibold">
+                        Reviewing Staff ID
+                    </label>
 
-		<!-- ================= REVIEW INFORMATION ================= -->
+                    <input
+                        type="number"
+                        id="staffId"
+                        class="form-control"
+                        placeholder="Enter staff ID"
+                        required>
 
-		<div class="card mt-4">
+                    <div class="form-text">
+                        Enter the ID of the staff member performing the review.
+                    </div>
 
+                </div>
 
-			<div class="card-header">
 
-				<h4 class="mb-0">Review Information</h4>
+                <!-- DECISION -->
+                <div class="mb-4">
 
-			</div>
+                    <label for="decision" class="form-label fw-semibold">
+                        Decision
+                    </label>
 
+                    <select
+                        id="decision"
+                        class="form-select"
+                        required>
 
-			<div class="card-body">
+                        <option value="">
+                            Select Decision
+                        </option>
 
+                        <option value="APPROVED">
+                            Approve Application
+                        </option>
 
-				<!-- STAFF ID -->
+                        <option value="REJECTED">
+                            Reject Application
+                        </option>
 
-				<div class="mb-4">
+                    </select>
 
-					<label for="staffId" class="form-label"> Reviewing Staff ID
+                </div>
 
-					</label> <input type="number" id="staffId" class="form-control"
-						placeholder="Enter staff ID" required>
 
-					<div class="form-text">Enter the ID of the staff member
-						performing the review.</div>
+                <!-- COMMENTS -->
+                <div class="mb-4">
 
-				</div>
+                    <label for="comments" class="form-label fw-semibold">
+                        Review Comments
+                    </label>
 
+                    <textarea
+                        id="comments"
+                        class="form-control"
+                        rows="5"
+                        maxlength="500"
+                        placeholder="Enter review comments..."
+                        required></textarea>
 
+                    <div class="form-text">
+                        Maximum 500 characters.
+                    </div>
 
-				<!-- DECISION -->
+                </div>
 
-				<div class="mb-4">
 
-					<label for="decision" class="form-label"> Decision </label> <select
-						id="decision" class="form-select" required>
+                <!-- REVIEW DATE -->
+                <div class="mb-4">
 
-						<option value="">Select Decision</option>
+                    <label for="reviewDate" class="form-label fw-semibold">
+                        Review Date
+                    </label>
 
-						<option value="APPROVED">Approve Application</option>
+                    <input
+                        type="text"
+                        id="reviewDate"
+                        class="form-control"
+                        value="Automatically generated"
+                        readonly>
 
-						<option value="REJECTED">Reject Application</option>
+                    <div class="form-text">
+                        The review date is generated by the backend.
+                    </div>
 
-					</select>
+                </div>
 
-				</div>
 
+                <!-- ACTION BUTTONS -->
+                <div class="d-flex flex-wrap gap-2 mt-4">
 
+                    <button
+                        type="button"
+                        id="submitReviewBtn"
+                        class="btn btn-primary">
 
-				<!-- COMMENTS -->
+                        Submit Review
 
-				<div class="mb-4">
+                    </button>
 
-					<label for="comments" class="form-label"> Review Comments </label>
 
+                    <button
+                        type="button"
+                        id="cancelBtn"
+                        class="btn btn-secondary">
 
-					<textarea id="comments" class="form-control" rows="5"
-						maxlength="500" placeholder="Enter review comments..." required></textarea>
+                        Cancel
 
+                    </button>
 
-					<div class="form-text">Maximum 500 characters.</div>
+                </div>
 
-				</div>
 
+                <!-- MESSAGE -->
+                <div id="reviewMessage" class="mt-3"></div>
 
+            </div>
 
-				<!-- REVIEW DATE -->
+        </div>
 
-				<div class="mb-4">
 
-					<label class="form-label"> Review Date </label> <input type="text"
-						id="reviewDate" class="form-control"
-						value="Automatically generated" readonly>
+        <!-- WARNING -->
+        <div class="alert alert-warning">
 
-					<div class="form-text">The review date is generated by the
-						backend.</div>
+            <strong>Important:</strong>
 
-				</div>
+            Please verify the application details, documents, staff ID,
+            decision and comments before submitting the review.
 
+        </div>
 
+    </div>
 
-				<!-- ================= SUBMIT ================= -->
+</main>
 
-				<div class="mt-4">
 
-					<button type="button" id="submitReviewBtn" class="btn btn-primary">
-
-					Submit Review</button>
-
-					<button type="button" id="cancelBtn" class="btn btn-secondary">
-
-						Cancel</button>
-
-				</div>
-
-
-
-				<!-- MESSAGE -->
-
-				<div id="reviewMessage" class="mt-3"></div>
-
-
-			</div>
-
-		</div>
-
-
-
-		<!-- ================= WARNING ================= -->
-
-		<div class="alert alert-warning mt-4">
-
-			<strong> Important: </strong> Please verify the application details,
-			documents, staff ID, decision and comments before submitting the
-			review.
-
-		</div>
-
-
-	</div>
-
-
-
-	<!-- ================= JAVASCRIPT ================= -->
-
-	<script src="../js/loan-application-review.js">
-    </script>
+<!-- JAVASCRIPT -->
+<script src="../js/loan-application-review.js"></script>
 
 
 </body>

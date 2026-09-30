@@ -163,8 +163,51 @@ if (logoutButton) {
 }
 
 
+
+//	 SHOW USER NAME ON THE TOP
+
+async function showUserName(){
+	
+			const response = await fetch( "http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/users/me",{
+				
+				method:"GET",
+				headers:{
+					"Authorization":"Bearer "+token
+				}
+				
+			});
+			console.log("RESPONSE : "+response.status);
+			//===============
+			//	CHECK RESPONSE
+			//===============
+			
+			if(!response.ok){
+				if(response.status === 401){
+					sessionStorage.removeItem("token");
+					window.location.href="../pages/login.html";
+					return;
+				}
+				throw new Error("failed to load current user");
+			}
+					//===============
+					//	GET USER DATA
+					//===============
+			
+					
+			const user = await response.json();
+			
+			console.log("CURRENTE USER : ",user);	
+			
+			//document.getElementById("customer").classList.add("d-none");
+			document.getElementById("customer").textContent =  user.userName ;	
+		
+}
+
 // -----------------------------------------------------
 // LOAD PROFILE
 // -----------------------------------------------------
 
 loadCurrentCustomer();
+showUserName();
+
+

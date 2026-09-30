@@ -79,3 +79,41 @@ document.getElementById("logout").addEventListener("click", function(){
 	window.location.href="login.html";
 	
 });
+
+
+//	DELETE BUTTON
+
+document.getElementById("deleteButton").addEventListener("click",async function(){
+		
+	
+	try{
+		
+		//	ASK FOR THE CONFIRMATION
+		const confirmed = confirm("Are you sure you want to delete this staff member ?");
+		
+		if(!confirmed){
+			return;
+		}
+		
+		const response = await fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/staffs/"+staffId,{
+			
+			method:"DELETE",
+			headers:{
+				"Authorization":"Bearer "+token
+			}
+			
+		});
+		
+		if(!response.ok){
+			throw new Error("Failed to delete staff profile.");
+		}
+		
+		console.log("DELETEED SUCCESSFULLY.");
+		window.location.href="staff.html";
+	}catch(error){
+		
+		console.error("Failed to delete staff profile.",error);
+		
+	}
+
+});

@@ -1,118 +1,172 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>View Application Reviews</title>
 
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-	rel="stylesheet">
+<!-- =====================================================
+     BOOTSTRAP
+     ===================================================== -->
 
-<link rel="stylesheet" href="../css/style.css">
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+>
+
+<!-- =====================================================
+     OUR GLOBAL CSS
+     ===================================================== -->
+
+<link
+    rel="stylesheet"
+    href="../css/style.css"
+>
+
 
 </head>
+
 <body>
-<!--  NAV BAR  -->
-		<nav class="navbar navbar-dark bg-dark">
-		
-		<div class="container">
-		
-			<a class="navbar-brand" id="dashboard">
-				Loan Management System
-			</a>
-			
-			<div>
-			<a class="btn btn-outline-light me-2" id="dashboard">
-				Dashboard
-			</a>
-			
-			<button type="button" class="btn btn-outline-light" id="logout">
-				Logout
-			</button>
-			</div>
-		</div>
-	</nav>
 
-<!--  MAIN CONTENT -->
+<!-- =====================================================
+     NAVBAR
+     ===================================================== -->
 
-<div class="container mt-5">
+<nav class="navbar navbar-dark ">
 
+    <div class="container">
 
- <div class="d-flex justify-content-between align-items-center mb-4">
- 	
- 	<div >
- 	
- 		<h2> Application Reviews</h2>
- 		
- 		<p class="text-muted"> View all loan application reviews.</p>
- 		
- 	</div>
- 
- </div>
- 
- <!--  REVIEWS TABLE -->
- 
- <div class="card shadow mt-3">
- 
- 	<div class="card-body">
- 	
- 		<div class="table-responsive">
- 		
- 			<table class="table table-bordered table-hover">
- 			
- 				<thead class="table-dark">
- 				
- 					<tr>
- 						
- 						<th> Review ID </th>
- 						
- 						<th> Application ID </th>
- 						
- 						<th> Staff ID </th>
- 						
- 						<th> Review Date </th>
- 						
- 						<th> Decision </th>
- 						
- 						<th> Comments </th>
- 						
- 						<th> Action </th>
- 					
- 					</tr>
- 				
- 				</thead>
- 				
- 				<tbody id="reviewsTableBody">
- 				
- 				</tbody>
- 			
- 			</table>
- 			
- 		</div>
- 		
- 	
- 	</div>
- 
- </div>
+        <!-- SYSTEM NAME -->
 
-</div>
+        <a
+            class="navbar-brand"
+            href="dashboard.html"
+        >
+            Loan Management System
+        </a>
+
+        <!-- NAVIGATION BUTTONS -->
+
+        <div>
+
+            <a
+                class="btn btn-outline-light me-2"
+                id="dashboard"
+            >
+                Dashboard
+            </a>
+
+            <button
+                type="button"
+                class="btn btn-outline-light"
+                id="logout"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- =====================================================
+     PAGE CONTENT
+     ===================================================== -->
+
+<main>
+
+    <div class="container page-container py-5">
+
+        <!-- =================================================
+             PAGE HEADER
+             ================================================= -->
+
+        <div class="page-header">
+
+            <h2>
+                Application Reviews
+            </h2>
+
+            <p>
+                View and manage loan application reviews.
+            </p>
+
+        </div>
+
+        <!-- =================================================
+             REVIEWS TABLE CARD
+             ================================================= -->
+
+        <div class="page-card">
+
+            <!-- CARD HEADER -->
+
+            <div class="card-header">
+
+                <h5>
+                    All Application Reviews
+                </h5>
+
+            </div>
+
+            <!-- CARD BODY -->
+
+            <div class="card-body">
+
+                <!-- TABLE -->
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Review ID</th>
+                                <th>Application ID</th>
+                                <th>Staff ID</th>
+                                <th>Review Date</th>
+                                <th>Decision</th>
+                                <th>Comments</th>
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <!-- JavaScript will insert rows here -->
+
+                        <tbody id="reviewsTableBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
 
 <script src="../js/view-reviews.js"></script>
 
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-

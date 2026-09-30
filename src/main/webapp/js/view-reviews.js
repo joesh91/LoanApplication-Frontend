@@ -71,8 +71,9 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/applicationrevie
 			
 			
 			row.innerHTML = `
-						<td>
+						<td><a href="view-review-details.html?id=${review.reviewId}&applicationId=${review.loanApplication}">
 							${review.reviewId}
+							</a>
 						</td>
 						<td>
 							${review.loanApplication}
@@ -92,7 +93,7 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/applicationrevie
 						<td>
 							
 							<button class="btn btn-outline-primary btn-sm" onclick="viewApplication(${review.loanApplication})">
-								View Application 
+								View Application  
 							</button>
 							
 						</td>		
@@ -113,7 +114,7 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/applicationrevie
 
 function viewApplication(applicationId){
 	
-	window.location.href="loan-application-details.html?id="+applicationId;
+	window.location.href="view-loan-application-details.html?id=" + applicationId;
 	
 }
 

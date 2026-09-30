@@ -80,3 +80,43 @@ document.getElementById("dashboard").addEventListener("click",function(){
 	
 });
 
+
+document.getElementById("deleteButton").addEventListener("click", async function(){
+	
+	console.log("BUTTON PRESSED");
+	try{
+		
+		const confirmed = confirm("Are you sure you want to delete this user ?");
+		
+		if(!confirmed){
+			
+			window.location.href="../pages/users.html";
+			return;
+		}
+		
+		const response = await fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/users/"+userId,{
+			
+			method:"DELETE",
+			headers:{
+				"Authorization":"Bearer "+token
+			}
+			
+		});
+		
+		if(!response.ok){
+			throw new Error("Failed to delete user profile throw exception.");
+		}
+		
+		const result = await response.json();
+		
+		console.log("Successfully deleted user profile.");
+		window.location.href="../pages/users.html";
+
+		
+	}catch(error){
+		
+		console.error("Failed to delete user profile.");
+		
+	}
+	
+});

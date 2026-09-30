@@ -24,13 +24,39 @@
 	    document.getElementById("usernameDisplay").textContent = username;
 	}
 	
+	//======================================
+	// DISPLAY ROLE 
+	//======================================
+	
+	async function roleDisplay(){
+	
+		try{	
+		const response = await fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/users/me",{
+			
+			method:"GET",
+			headers:{
+				"Authorization":"Bearer "+token
+			}
+			
+		});
+		
+
+		const result = await response.json()
+		console.log(result);
+		
+		document.getElementById("roleDisplay").textContent = result.role;			
+	}catch(error){
+		console.error("Failed to load user role."+error);
+	}
+	
+	}
+	roleDisplay();
 	
 	// =====================================================
 	//                      LOGOUT
 	// =====================================================
 	
 	const logoutBtn = document.getElementById("logout");
-	
 	logoutBtn.addEventListener("click",function(){
 		
 		//	REMOVE AUTHENTICATION INFORMATION
@@ -44,4 +70,5 @@
 		
 	});
 	
+
 	

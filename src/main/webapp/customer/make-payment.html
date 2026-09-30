@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Apply for Loan</title>
+<title>Make Payment</title>
 
 <!-- Bootstrap CSS -->
 <link
@@ -52,7 +52,7 @@
             <button
                 type="button"
                 class="btn btn-outline-light"
-                id="logout">
+                id="logoutButton">
                 Logout
             </button>
 
@@ -71,124 +71,104 @@
 
     <div class="page-header">
 
-        <h2>Apply for a Loan</h2>
+        <h2>Make a Payment</h2>
 
         <p>
-            Submit a new loan application by providing the required details.
+            Make a payment toward your loan.
         </p>
 
     </div>
 
 
-    <!-- APPLICATION CARD -->
+    <!-- ================= PAYMENT CARD ================= -->
 
     <div class="page-card">
 
         <div class="card-header">
 
-            <h5>Loan Application</h5>
+            <h5>Payment Information</h5>
 
         </div>
 
 
         <div class="card-body">
 
-            <!-- SUCCESS MESSAGE -->
+            <form id="paymentForm">
 
-            <div
-                id="successMessage"
-                class="alert alert-success d-none">
-            </div>
-
-
-            <!-- ERROR MESSAGE -->
-
-            <div
-                id="errorMessage"
-                class="alert alert-danger d-none">
-            </div>
-
-
-            <!-- LOAN APPLICATION FORM -->
-
-            <form id="loanApplicationForm">
-
-                <!-- LOAN TYPE -->
+                <!-- LOAN ID -->
 
                 <div class="mb-4">
 
                     <label
-                        for="loanType"
+                        for="loanId"
                         class="form-label">
-                        Loan Type
-                    </label>
-
-                    <select
-                        id="loanType"
-                        class="form-select">
-
-                        <option value="housingLoan">
-                            Housing Loan
-                        </option>
-
-                        <option value="vehicleLoan">
-                            Vehicle Loan
-                        </option>
-
-                        <option value="personalLoan">
-                            Personal Loan
-                        </option>
-
-                        <option value="businessLoan">
-                            Business Loan
-                        </option>
-
-                        <option value="otherLoan">
-                            Other
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <!-- REQUESTED AMOUNT -->
-
-                <div class="mb-4">
-
-                    <label
-                        for="requestedAmount"
-                        class="form-label">
-                        Requested Amount
+                        Loan ID
                     </label>
 
                     <input
                         type="number"
                         class="form-control"
-                        id="requestedAmount"
-                        min="1"
-                        step="0.01"
-                        placeholder="Enter requested amount">
+                        id="loanId"
+                        readonly>
+
+                    <div class="form-text">
+                        This loan was selected from your loan records.
+                    </div>
 
                 </div>
 
 
-                <!-- PURPOSE -->
+                <!-- PAYMENT AMOUNT -->
 
                 <div class="mb-4">
 
                     <label
-                        for="purpose"
+                        for="amount"
                         class="form-label">
-                        Purpose
+                        Payment Amount
                     </label>
 
-                    <textarea
+                    <input
+                        type="number"
                         class="form-control"
-                        id="purpose"
-                        rows="5"
-                        placeholder="Enter the purpose of the loan"></textarea>
+                        id="amount"
+                        placeholder="Enter payment amount"
+                        min="1"
+                        step="0.01"
+                        required>
 
+                </div>
+
+
+                <!-- PAYMENT STATUS -->
+
+                <div class="mb-4">
+
+                    <label
+                        for="paymentStatus"
+                        class="form-label">
+                        Payment Status
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="paymentStatus"
+                        value="PENDING"
+                        readonly>
+
+                    <div class="form-text">
+                        Payment status is automatically assigned by the system.
+                    </div>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+
+                <div
+                    id="paymentMessage"
+                    class="mb-4">
                 </div>
 
 
@@ -199,18 +179,18 @@
                     <button
                         type="submit"
                         class="btn btn-primary me-2"
-                        id="submitButton">
+                        id="makePaymentButton">
 
-                        Submit Application
+                        Make Payment
 
                     </button>
 
                     <button
                         type="button"
                         class="btn btn-secondary"
-                        id="backButton">
+                        id="cancelButton">
 
-                        Back
+                        Cancel
 
                     </button>
 
@@ -225,9 +205,17 @@
 </main>
 
 
-<!-- JavaScript -->
+<!-- Bootstrap JS -->
 
-<script src="../js/loan-applicationcus.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- Make Payment JS -->
+
+<script src="../js/make-payment.js"></script>
+
 
 </body>
 

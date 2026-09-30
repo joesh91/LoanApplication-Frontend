@@ -5,6 +5,8 @@ if(!token){
 	window.location.href="login.html";
 }
 
+console.log("TOKEN DETAILS : "+token);
+
 fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/payments",{
 
 	method:"GET",
@@ -13,10 +15,22 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/payments",{
 	}		
 }).then(response=>{
 		if(!response.ok){
-			throw new Error("Failed to load payment details."+response);
+			
+			const tableBody = document.getElementById("paymentTable");	
+			const row=document.createElement("tr");
+			
+			row.innerHTML =`
+				<td colspan="5"><h4 class="alert alert-danger"> Failed to load payment details. <h4></td>
+			`;
+			tableBody.appendChild(row);
+				
+			throw new Error("Failed to load payment details."+response.status);
 		}	
 		
+		
 		return response.json();
+		
+		
 }).then(data=>{
 	console.log(data);
 	
@@ -40,7 +54,7 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/payments",{
 			
 		}); //<td> ${payment.paymentDate}</td>
 }).catch(error=>{
-	console.error("Error : "+error)
+	console.error("Error : "+error);
 });
 
 

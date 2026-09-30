@@ -147,3 +147,20 @@ document.getElementById("logout").addEventListener("click", function(){
 	window.location.href="login.html";
 	
 });
+
+
+//	GO BACK
+
+document.getElementById("cancelBtn").addEventListener("click",function(){
+	
+	window.location.href="loan-application-details.html?id="+applicationId;
+	
+});
+
+
+
+
+
+
+
+

@@ -1,101 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width initial-scale=1.0">
-<title>Loan Details</title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-	rel="stylesheet">
 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Details</title>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
+
+
 </head>
+
 <body>
 
-<!--  NAV BAR  -->
-		<nav class="navbar navbar-dark bg-dark">
-		
-		<div class="container">
-		
-			<a class="navbar-brand" id="dashboard">
-				Loan Management System
-			</a>
-			
-			<div>
-			<a class="btn btn-outline-light me-2" id="dashboard">
-				Dashboard
-			</a>
-			
-			<button type="button" class="btn btn-outline-light" id="logout">
-				Logout
-			</button>
-			</div>
-		</div>
-	</nav>
-	
-<!-- PAGE CONTENT  -->
 
-<div class="container mt-4">
-	
-		<h2 class="mb-4 text-format">
-			Loan Details
-		</h2>
-		
-		<div class="card shadow">
-		
-			<div class="card-body mt-3">
-					
-				<p>
-					<strong>Loan ID : </strong>
-					<span id="loanId"></span>
-				</p>
-				<p>
-					<strong>Application ID : </strong>
-					<span id="applicationId"></span>
-				</p>
-				<p>
-					<strong>Approved Amount : </strong>
-					<span id="appAmount"></span>
-				</p>
-				<p>
-					<strong>Interest Rate : </strong>
-					<span id="intRate"></span>
-				</p>
-				<p>
-					<strong>Duration : </strong>
-					<span id="duration"></span>
-				</p>
-				<p>
-					<strong>Start Date : </strong>
-					<span id="startDate"></span>
-				</p>
-				<p>
-					<strong>End Date : </strong>
-					<span id="endDate"></span>
-				</p>
-				<p>
-					<strong>Status : </strong>
-					<span id="status"></span>
-				</p>
-				
-				<hr>
-				<div class="container mt-3 mb-3">
-					
-					<button type="button" class="btn btn-primary" id="editLoanButton">
-					Update / Verify Loan
-					</button>
-				
-				</div>
-				<div id="loanMessage" class="mt-3">
-					
-				</div>
-				
-			</div>
-			
-		</div>
-		
-</div>
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark ">
+    <div class="container">
+
+        <a class="navbar-brand" href="dashboard.html">
+            Loan Management System
+        </a>
+
+        <div>
+            <a class="btn btn-outline-light me-2" id="dashboard">
+                Dashboard
+            </a>
+
+            <button type="button" class="btn btn-outline-light" id="logout">
+                Logout
+            </button>
+        </div>
+
+    </div>
+</nav>
+
+
+<!-- PAGE CONTENT -->
+<main>
+
+    <div class="container page-container py-5">
+
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+
+            <h2>Loan Details</h2>
+
+            <p>
+                View the details of the selected loan.
+            </p>
+
+        </div>
+
+
+        <!-- LOAN INFORMATION -->
+        <div class="page-card mb-4">
+
+            <div class="card-header">
+                <h5>Loan Information</h5>
+            </div>
+
+            <div class="card-body">
+
+                <div class="row g-4">
+
+                    <div class="col-md-6">
+
+                        <div class="fw-semibold text-muted mb-1">
+                            Loan ID
+                        </div>
+
+                        <div id="loanId"></div>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <div class="fw-semibold text-muted mb-1">
+                            Application ID
+                        </div>
+
+                        <div id="applicationId"></div>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <div class="fw-semibold text-muted mb-1">
+                            Approved Amount
+                        </div>
+
+                        <div id="appAmount"></div>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <div class="fw-semibold text-muted mb-1">
+                            Interest Rate
+                        </div>
+
+                        <div id="intRate"></div>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <div class="fw-semibold text-muted mb-1">
+                            Duration
+                        </div>
+
+                        <div id="duration"></div>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <div class="fw-semibold text-muted mb-1">
+                            Status
+                        </div>
+
+                        <div id="status"></div>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <div class="fw-semibold text-muted mb-1">
+                            Start Date
+                        </div>
+
+                        <div id="startDate"></div>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <div class="fw-semibold text-muted mb-1">
+                            End Date
+                        </div>
+
+                        <div id="endDate"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOAN ACTIONS -->
+        <div class="page-card">
+
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+
+                    <div>
+
+                        <h5 class="card-title mb-1">
+                            Loan Actions
+                        </h5>
+
+                        <p class="card-text mb-0">
+                            Update or verify the selected loan.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button"
+                            class="btn btn-primary"
+                            id="editLoanButton">
+
+                        Update / Verify Loan
+
+                    </button>
+
+                </div>
+
+
+                <!-- MESSAGE AREA -->
+                <div id="loanMessage" class="mt-3"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
 
 <script src="../js/loan-details.js"></script>
+
+
 </body>
+
 </html>

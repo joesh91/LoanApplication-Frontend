@@ -8,6 +8,7 @@ if(!token){
 console.log("TOKEN : ",token);
 const createLoanButton = document.getElementById("createLoanButton");
 
+
 createLoanButton.addEventListener("click",function(event){
 	
 	

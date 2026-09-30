@@ -59,3 +59,32 @@ createbutton.addEventListener("click",function(event){
 
 	
 });
+
+
+//	 LOGOUT BUTTON
+
+document.getElementById("logout").addEventListener("click",function(){
+	
+	sessionStorage.removeItem("token");
+	
+	window.location.href="../pages/login.html";
+	
+});
+
+//	 CANEL BUTTON
+
+document.getElementById("backButton").addEventListener("click",function(){
+	
+	console.log("CANCEL BUTTON PRESSED.");
+	
+	window.location.href="../pages/users.html";
+	
+});
+
+
+
+
+
+
+
+

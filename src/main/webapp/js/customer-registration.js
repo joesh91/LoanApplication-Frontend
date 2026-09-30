@@ -71,7 +71,6 @@ fetch("http://localhost:8080/LoanApplication-0.0.1-SNAPSHOT/api/registration/all
 
 	document.getElementById("createNewCustomer").addEventListener("click", function(){
 		
-		sessionStorage.removeItem("token");
 		window.location.href="#";
 		
 	});

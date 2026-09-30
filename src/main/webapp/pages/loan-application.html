@@ -1,97 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width ,initial-scale=1.0" />
-<title>Loan Applications</title>
- <!-- Bootstrap -->
-<link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Our CSS -->
-    <link rel="stylesheet" href="../css/style.css">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Loan Applications</title>
+
+
+    <!-- =====================================================
+         BOOTSTRAP
+         ===================================================== -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         OUR GLOBAL CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
 </head>
+
+
 <body>
 
- <!--  NAV BAR  -->
-		<nav class="navbar navbar-dark bg-dark">
-		
-		<div class="container">
-		
-			<a class="navbar-brand" id="dashboard">
-				Loan Management System
-			</a>
-			
-			<div>
-			<a class="btn btn-outline-light me-2" id="dashboard">
-				Dashboard
-			</a>
-			
-			<button type="button" class="btn btn-outline-light" id="logout">
-				Logout
-			</button>
-			</div>
-		</div>
-	</nav>
-    
-        <!-- =========================
-         		PAGE CONTENT
-   		 ========================== -->
-   		 
-   	<div class="container mt-5">
-   	
-   		<h1>
-   			Loan Applications
-   		</h1>
-   	
-   		<p class="text-muted">
-   			View all loan applications.
-   		</p>
-   		
-   		 <!-- =========================
-             APPLICATION TABLE
-       		 ========================== -->
-       		 
-       		 
-       	<div class="table-responsive mt-4">
-       		
-       		<table class="table table-bordered table-striped">
-       			
-       			<thead class="table-dark">
-       				
-       				<tr>
-       					
-       					<th> Application ID </th>
-       					
-       					<th> Loan Type </th>
-       					
-       					<th> Requested Amount </th>
-       					
-       					<th> Purpose </th>
-       					
-       					<th> Status </th>
-       					
-       					<th> Customer ID </th>
-       					
-       					<th> Application Date </th>
-       				
-       				</tr>
-       			
-       			</thead>
-       			<tbody id="loanApplicationTable">
-       			
-       			
-       			</tbody>
-       			
-       		</table>
-       	       	
-       	</div>	 
 
-   	</div>	 
-   		     <!-- JavaScript -->  
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
 
-		<script src="../js/loan-applications.js" ></script>
-		
-		
+    <nav class="navbar navbar-dark ">
+
+        <div class="container">
+
+            <!-- SYSTEM NAME -->
+
+            <a
+                class="navbar-brand"
+                href="dashboard.html"
+            >
+                Loan Management System
+            </a>
+
+
+            <!-- NAVIGATION BUTTONS -->
+
+            <div>
+
+                <a
+                    class="btn btn-outline-light me-2"
+                    id="dashboard"
+                >
+                    Dashboard
+                </a>
+
+
+                <button
+                    type="button"
+                    class="btn btn-outline-light"
+                    id="logout"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         PAGE CONTENT
+         ===================================================== -->
+
+    <main>
+
+        <div class="container page-container py-5">
+
+
+            <!-- =================================================
+                 PAGE HEADER
+                 ================================================= -->
+
+            <div class="page-header">
+
+                <h2>
+                    Loan Applications
+                </h2>
+
+                <p>
+                    View and manage all submitted loan applications.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 APPLICATION TABLE CARD
+                 ================================================= -->
+
+            <div class="page-card">
+
+
+                <!-- CARD HEADER -->
+
+                <div class="card-header">
+
+                    <h5>
+                        All Loan Applications
+                    </h5>
+
+                </div>
+
+
+                <!-- CARD BODY -->
+
+                <div class="card-body">
+
+
+                    <!-- TABLE -->
+
+                    <div class="table-responsive">
+
+                        <table class="table table-hover">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Application ID
+                                    </th>
+
+                                    <th>
+                                        Loan Type
+                                    </th>
+
+                                    <th>
+                                        Requested Amount
+                                    </th>
+
+                                    <th>
+                                        Purpose
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Customer ID
+                                    </th>
+
+                                    <th>
+                                        Application Date
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <!-- JavaScript will insert rows here -->
+
+                            <tbody id="loanApplicationTable">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="../js/loan-applications.js"></script>
+
+
 </body>
+
 </html>

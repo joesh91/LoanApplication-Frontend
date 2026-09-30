@@ -138,6 +138,30 @@ document.getElementById("checkStatus").addEventListener("click",function(){
 });
 
 //===============
+//	MY LOANS
+//===============
+
+document.getElementById("myLoansButton").addEventListener("click",function(){
+	
+
+	window.location.href= "../customer/my-loans.html"	;
+	
+});
+
+viewPaymentsButton
+
+//===============
+//	MY LOANS
+//===============
+
+document.getElementById("viewPaymentsButton").addEventListener("click",function(){
+	
+
+	window.location.href= "../customer/my-payments.html"	;
+	
+});
+
+//===============
 //	LOG OUT BUTTON
 //===============
 
