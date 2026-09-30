@@ -172,6 +172,9 @@ LoanApplication-Frontend/
             │   ├── lib/
             │   └── web.xml
             │
+			├── screenshots/
+			│	└── front.png
+			│
             └── index.html
 ```
 
